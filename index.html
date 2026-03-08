@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sivakumar Chinnasamy | Associate DevOps Engineer</title>
-  <meta name="description" content="Professional portfolio of Sivakumar Chinnasamy, Associate DevOps Engineer." />
+  <title>Sivakumar Chinnasamy | DevOps Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #f3f6fb;
+      --bg: #eef6ff;
       --surface: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --line: #d9e2ec;
-      --primary: #0b3a67;
-      --primary-soft: #e8f0f8;
+      --ink: #122033;
+      --muted: #3f5167;
+      --accent: #0c6d88;
+      --accent-2: #1d946f;
+      --accent-soft: #d8f3f7;
+      --line: #c9d9eb;
+      --chip: #ecf5ff;
+      --card-shadow: 0 12px 34px rgba(18, 32, 51, 0.1);
     }
 
     * { box-sizing: border-box; }
@@ -24,295 +26,427 @@
     html, body {
       margin: 0;
       padding: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
-      line-height: 1.55;
+      background: linear-gradient(120deg, #e6f2ff, #e5fbf0, #fff1df, #f1f1ff, #e6f2ff);
+      background-size: 280% 280%;
+      animation: bgShift 16s ease infinite;
+      color: var(--ink);
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      scroll-behavior: smooth;
     }
 
-    .wrap {
-      width: min(1080px, 92%);
-      margin: 2rem auto;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 1.2rem;
-      margin-bottom: 1rem;
+    .page {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+      padding: 3rem 0 4rem;
     }
 
     .hero {
+      background: linear-gradient(135deg, #ffffff 0%, #ecf7ff 55%, #ecfff7 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--card-shadow);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 0.8s ease;
       display: grid;
-      grid-template-columns: 180px 1fr;
       gap: 1.2rem;
+      grid-template-columns: 220px 1fr;
       align-items: center;
     }
 
-    .photo {
-      width: 180px;
-      height: 180px;
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #fff;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
+      background: linear-gradient(45deg, rgba(12, 109, 136, 0.2), rgba(29, 148, 111, 0.06));
+      right: -70px;
+      top: -70px;
     }
 
-    h1 {
+    .hero h1 {
       margin: 0;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: 0.2px;
     }
+
+    .profile-photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 12px 28px rgba(18, 32, 51, 0.24);
+      object-fit: cover;
+      object-position: center 18%;
+      z-index: 1;
+      animation: photoFloat 4s ease-in-out infinite;
+    }
+
+    .hero p { margin: 0.8rem 0; color: var(--muted); }
 
     .role {
-      margin-top: 0.35rem;
       display: inline-block;
-      background: var(--primary-soft);
-      color: var(--primary);
+      margin-top: 0.7rem;
+      padding: 0.45rem 0.85rem;
       border-radius: 999px;
-      padding: 0.35rem 0.7rem;
+      background: var(--accent-soft);
+      color: #0a4b5e;
       font-weight: 700;
-      font-size: 0.8rem;
-    }
-
-    .meta {
-      margin: 0.55rem 0 0;
-      color: var(--muted);
-      font-size: 0.94rem;
+      font-size: 0.85rem;
     }
 
     .contact {
-      margin-top: 0.8rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
+      gap: 0.8rem;
+      margin-top: 1rem;
     }
 
     .contact a {
       text-decoration: none;
-      color: var(--primary);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 0.4rem 0.65rem;
-      font-size: 0.88rem;
-      font-weight: 700;
+      color: var(--ink);
+      padding: 0.45rem 0.7rem;
       background: #fff;
-    }
-
-    h2 {
-      margin: 0 0 0.75rem;
-      font-size: 1.1rem;
-      color: var(--primary);
-    }
-
-    p { margin: 0; }
-
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.6rem;
-    }
-
-    .skill {
       border: 1px solid var(--line);
       border-radius: 10px;
-      padding: 0.65rem;
-      background: #f9fbfd;
       font-size: 0.9rem;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .skill strong {
-      display: block;
-      margin-bottom: 0.1rem;
-      color: var(--text);
+    .contact a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 7px 18px rgba(12, 109, 136, 0.14);
     }
 
-    .item {
-      border-left: 3px solid var(--primary);
-      padding-left: 0.75rem;
+    .section {
+      margin-top: 1.8rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--card-shadow);
+      padding: 1.4rem;
+      animation: fadeUp 0.9s ease both;
+    }
+
+    .section:nth-of-type(2) { animation-delay: 0.08s; }
+    .section:nth-of-type(3) { animation-delay: 0.16s; }
+    .section:nth-of-type(4) { animation-delay: 0.24s; }
+    .section:nth-of-type(5) { animation-delay: 0.32s; }
+    .section:nth-of-type(6) { animation-delay: 0.4s; }
+
+    .section h2 {
+      margin: 0 0 0.7rem;
+      font-size: 1.2rem;
+      color: #10241d;
+      position: relative;
+      padding-bottom: 0.45rem;
+    }
+
+    .section h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 86px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .summary { color: var(--muted); line-height: 1.65; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .skill-item {
+      background: var(--chip);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0.7rem;
+      font-size: 0.93rem;
+      line-height: 1.45;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .skill-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(18, 32, 51, 0.12);
+    }
+
+    .skill-item strong { display: block; margin-bottom: 0.2rem; }
+
+    .timeline-item {
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
       margin-bottom: 0.9rem;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
     }
 
-    .item:last-child { margin-bottom: 0; }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+    }
 
-    .item h3 {
+    .timeline-item:last-child { margin-bottom: 0; }
+
+    .timeline-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-head h3 {
       margin: 0;
       font-size: 1rem;
     }
 
-    .date {
-      margin: 0.2rem 0 0.4rem;
-      color: var(--muted);
+    .meta {
       font-size: 0.88rem;
-      font-weight: 600;
+      color: var(--muted);
     }
 
     ul {
-      margin: 0;
-      padding-left: 1rem;
-      font-size: 0.92rem;
-      color: #1f2d3d;
+      margin: 0.4rem 0 0;
+      padding-left: 1.1rem;
+      color: #2f3237;
+      line-height: 1.5;
     }
 
-    .grid-2,
-    .grid-3 {
+    .edu-list, .cert-list {
       display: grid;
-      gap: 0.7rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.8rem;
     }
 
-    .grid-2 { grid-template-columns: 1fr 1fr; }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cert-list {
+      align-items: start;
+    }
 
-    .sub {
+    .card {
       border: 1px solid var(--line);
+      border-radius: 12px;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fcff 100%);
+      padding: 0.9rem;
+    }
+
+    .card h3 { margin: 0 0 0.35rem; font-size: 1rem; }
+    .card p { margin: 0.22rem 0; color: var(--muted); font-size: 0.93rem; }
+
+    .cert-badge {
+      width: 88px;
+      height: 88px;
+      object-fit: contain;
       border-radius: 10px;
-      padding: 0.75rem;
+      border: 1px solid var(--line);
+      margin-top: 0.45rem;
       background: #fff;
     }
 
-    .sub h3 {
-      margin: 0;
-      font-size: 0.97rem;
+    .cert-link {
+      display: inline-block;
+      margin-top: 0.35rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
-    .sub p {
-      margin-top: 0.2rem;
-      font-size: 0.89rem;
-      color: #334155;
+    .cert-link:hover {
+      text-decoration: underline;
     }
 
     footer {
+      margin-top: 1.2rem;
       text-align: center;
+      font-size: 0.85rem;
       color: var(--muted);
-      font-size: 0.84rem;
-      padding: 0.5rem 0 1rem;
     }
 
-    @media (max-width: 880px) {
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes photoFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @media (max-width: 700px) {
+      .page { padding: 1.2rem 0 2rem; }
+      .hero { padding: 1.3rem; }
       .hero { grid-template-columns: 1fr; }
-      .photo { width: 150px; height: 150px; }
-      .skills,
-      .grid-2,
-      .grid-3 { grid-template-columns: 1fr; }
+      .section { padding: 1rem; }
+      .contact a { width: 100%; text-align: center; }
+      .profile-photo { margin: 0 auto; }
+      .profile-photo {
+        width: 180px;
+        height: 180px;
+      }
     }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="card hero">
-      <img class="photo" src="./cva_phpot.png" alt="Sivakumar Chinnasamy" />
+  <main class="page">
+    <section class="hero">
+      <img class="profile-photo" src="./cva_phpot.png" alt="Sivakumar Chinnasamy profile photo" />
       <div>
         <h1>Sivakumar Chinnasamy</h1>
-        <span class="role">Associate DevOps Engineer</span>
-        <p class="meta">Dharmapuri, Tamil Nadu, India - 636808</p>
+        <p>Dharmapuri, Tamil Nadu, India - 636808</p>
+        <span class="role">DevOps Engineer</span>
         <div class="contact">
           <a href="tel:+917604861942">+91 7604861942</a>
           <a href="mailto:vvitsivakumar@gmail.com">vvitsivakumar@gmail.com</a>
-          <a href="https://www.linkedin.com/in/sivakumarbecse" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/sivakumarbecse" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
         </div>
       </div>
     </section>
 
-    <section class="card">
-      <h2>Professional Summary</h2>
-      <p>DevOps Engineer with hands-on experience in Linux server administration, Docker containerization, Kubernetes orchestration, and SaaS infrastructure management. Experienced in production workloads on DigitalOcean Kubernetes and Proxmox virtualization environments. Skilled in Jenkins CI/CD, Ansible automation for server patching, and Zabbix monitoring for proactive alerting. AWS Certified Cloud Practitioner focused on reliability, scalability, and deployment efficiency.</p>
+    <section class="section">
+      <h2>Summary</h2>
+      <p class="summary">
+        DevOps Engineer with hands-on experience in Linux server administration, Docker containerization, Kubernetes orchestration, and SaaS infrastructure management. Experienced in production workloads on DigitalOcean Kubernetes and Proxmox virtualization environments. Skilled in Jenkins CI/CD, Ansible automation for server patching, and Zabbix monitoring for proactive alerting. AWS Certified Cloud Practitioner focused on reliability, scalability, and deployment efficiency.
+      </p>
     </section>
 
-    <section class="card">
+    <section class="section">
       <h2>Technical Skills</h2>
-      <div class="skills">
-        <div class="skill"><strong>Cloud Platforms</strong>DigitalOcean (Kubernetes - SaaS Hosting)</div>
-        <div class="skill"><strong>Cloud Fundamentals</strong>AWS Certified Cloud Practitioner</div>
-        <div class="skill"><strong>Programming & Scripting</strong>Shell Scripting, Core Python</div>
-        <div class="skill"><strong>Operating Systems</strong>Linux (Debian, RHEL), Windows</div>
-        <div class="skill"><strong>Virtualization & Infrastructure</strong>Proxmox VE (Server & VM Management)</div>
-        <div class="skill"><strong>CI/CD</strong>Jenkins (Basic Pipeline Setup)</div>
-        <div class="skill"><strong>Configuration Management</strong>Ansible</div>
-        <div class="skill"><strong>Monitoring & Observability</strong>Zabbix</div>
-        <div class="skill"><strong>Version Control</strong>Git, GitHub</div>
-        <div class="skill"><strong>Web Servers</strong>Apache, Nginx</div>
-        <div class="skill"><strong>Databases</strong>MySQL, MariaDB</div>
-        <div class="skill"><strong>Containerization & Orchestration</strong>Docker, Kubernetes</div>
+      <div class="skills-grid">
+        <div class="skill-item"><strong>☁️ Cloud Platforms</strong>DigitalOcean (Kubernetes - SaaS Hosting)</div>
+        <div class="skill-item"><strong>✅ Cloud Fundamentals</strong>AWS (Certified - AWS Certified Cloud Practitioner)</div>
+        <div class="skill-item"><strong>💻 Programming & Scripting</strong>Shell Scripting, Core Python</div>
+        <div class="skill-item"><strong>🖥️ Operating Systems</strong>Linux (Debian, RHEL), Windows</div>
+        <div class="skill-item"><strong>🧩 Virtualization</strong>Proxmox VE (Server & VM Management)</div>
+        <div class="skill-item"><strong>🚀 CI/CD</strong>Jenkins (Basic Pipeline Setup)</div>
+        <div class="skill-item"><strong>⚙️ Configuration Management</strong>Ansible</div>
+        <div class="skill-item"><strong>📊 Monitoring</strong>Zabbix</div>
+        <div class="skill-item"><strong>🌿 Version Control</strong>Git, GitHub</div>
+        <div class="skill-item"><strong>🌐 Web Servers</strong>Apache, Nginx</div>
+        <div class="skill-item"><strong>🗄️ Databases</strong>MySQL, MariaDB</div>
+        <div class="skill-item"><strong>📦 Containers</strong>Docker, Kubernetes</div>
       </div>
     </section>
 
-    <section class="card">
+    <section class="section">
       <h2>Professional Experience</h2>
-      <article class="item">
-        <h3>Associate DevOps Engineer - FaveoCloud, Faveo (formerly Ladybird Web Solution Pvt Ltd)</h3>
-        <p class="date">Dec 2025 - Present | Dharmapuri, Tamil Nadu, India</p>
+
+      <article class="timeline-item">
+        <div class="timeline-head">
+          <h3>Associate DevOps Engineer - Faveo (formerly Ladybird Web Solution Pvt Ltd)</h3>
+          <span class="meta">Dec 2025 - Present | Dharmapuri, Tamil Nadu</span>
+        </div>
         <ul>
-          <li>Manage and support SaaS applications hosted on DigitalOcean Kubernetes with Linux-based infrastructure.</li>
-          <li>Assist Jenkins CI/CD pipeline setup and build automation for application delivery.</li>
-          <li>Develop and execute Ansible playbooks for automated patching and server housekeeping.</li>
-          <li>Implement Zabbix monitoring with triggers, alert policies, and dashboards for proactive issue detection.</li>
-          <li>Deploy applications using Docker and support Kubernetes orchestration tasks.</li>
-          <li>Manage Proxmox VE servers and provision virtual machines for application and internal environments.</li>
+          <li>Manage production SaaS workloads on DigitalOcean Kubernetes, ensuring platform stability and service availability.</li>
+          <li>Support CI/CD pipelines in Jenkins for controlled builds and application deployments.</li>
+          <li>Automate patching and recurring operations with Ansible playbooks across Linux environments.</li>
+          <li>Configure Zabbix monitoring, alert triggers, and dashboards to improve incident detection and response.</li>
+          <li>Deploy and maintain Faveo Helpdesk instances with Docker-based release workflows.</li>
+          <li>Troubleshoot Kubernetes and Linux production incidents, including performance and runtime issues.</li>
+          <li>Administer Proxmox VE clusters and provision VMs for hosting and internal workloads.</li>
         </ul>
       </article>
-      <article class="item">
-        <h3>Trainee DevOps Engineer - FaveoCloud, Faveo (formerly Ladybird Web Solution Pvt Ltd)</h3>
-        <p class="date">Dec 2024 - Nov 2025 | Dharmapuri, Tamil Nadu, India</p>
+
+      <article class="timeline-item">
+        <div class="timeline-head">
+          <h3>Trainee DevOps Engineer - Faveo (formerly Ladybird Web Solution Pvt Ltd)</h3>
+          <span class="meta">Dec 2024 - Nov 2025 | Dharmapuri, Tamil Nadu</span>
+        </div>
         <ul>
-          <li>Supported Linux-based infrastructure and routine operations for hosted applications.</li>
-          <li>Assisted Faveo Helpdesk installation, configuration, and deployment support.</li>
-          <li>Worked on Docker container creation and management.</li>
-          <li>Configured Apache/Nginx web servers and managed SSL certificates.</li>
-          <li>Performed monitoring, troubleshooting, and log analysis for uptime support.</li>
+          <li>Supported Linux server administration and day-to-day operations for client-facing applications.</li>
+          <li>Configured Apache and Nginx for secure and reliable Faveo application hosting.</li>
+          <li>Built and managed Docker containers for consistent deployments across environments.</li>
+          <li>Installed and renewed SSL certificates to maintain secure public endpoints.</li>
+          <li>Handled monitoring, troubleshooting, and log analysis to support uptime targets.</li>
         </ul>
       </article>
-      <article class="item">
-        <h3>DevOps Engineer (Internship) - Faveo (formerly Ladybird Web Solution Pvt Ltd)</h3>
-        <p class="date">Aug 2024 - Nov 2024 | Dharmapuri, Tamil Nadu, India</p>
+
+      <article class="timeline-item">
+        <div class="timeline-head">
+          <h3>DevOps Engineer Intern - Faveo (formerly Ladybird Web Solution Pvt Ltd)</h3>
+          <span class="meta">Aug 2024 - Nov 2024 | Dharmapuri, Tamil Nadu</span>
+        </div>
         <ul>
-          <li>Gained hands-on Linux systems and server administration experience.</li>
-          <li>Assisted Faveo Helpdesk setup and Apache/Nginx configuration.</li>
-          <li>Supported Docker containerization, basic Kubernetes usage, and SSL setup.</li>
-          <li>Performed basic automation tasks using shell scripting.</li>
+          <li>Built foundational experience in Linux administration and server operations.</li>
+          <li>Assisted with Faveo Helpdesk implementation, web server setup, and website releases.</li>
+          <li>Supported Docker containerization, basic Kubernetes operations, and SSL setup tasks.</li>
+          <li>Contributed basic shell scripting automation for repetitive maintenance activities.</li>
         </ul>
       </article>
     </section>
 
-    <section class="card">
-      <h2>Education</h2>
-      <div class="grid-3">
-        <article class="sub">
-          <h3>Bachelor of Engineering - Computer Science and Engineering</h3>
-          <p>Varuvan Vadivelan Institute of Technology</p>
-          <p>Graduated: June 2024 | Percentage: 80%</p>
-        </article>
-        <article class="sub">
-          <h3>Higher Secondary Course (HSC)</h3>
-          <p>Jaisakthi Matric Hr Sec School</p>
-          <p>Completed: March 2020 | Percentage: 71%</p>
-        </article>
-        <article class="sub">
-          <h3>Secondary School Leaving Certificate (SSLC)</h3>
-          <p>Jaisakthi Matric Hr Sec School</p>
-          <p>Completed: March 2018 | Percentage: 92%</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="card">
+    <section class="section">
       <h2>Certifications</h2>
-      <div class="grid-2">
-        <article class="sub">
+      <div class="cert-list">
+        <div class="card">
           <h3>AWS Certified Cloud Practitioner</h3>
           <p>Issued: January 24, 2026</p>
-          <p>Valid until: January 24, 2029</p>
+          <p>Valid Until: January 24, 2029</p>
           <p>Validation ID: 2e844775cb114020b4bbc0e37c2e4200</p>
-        </article>
-        <article class="sub">
+          <p>Credential: Foundational cloud architecture, billing, security, and operations</p>
+          <a class="cert-link" href="https://www.credly.com/badges/818b111a-f4c4-4d25-b43f-acb82ef223f4" target="_blank" rel="noopener noreferrer">View Credly Badge</a>
+          <br />
+          <img class="cert-badge" src="https://images.credly.com/size/680x680/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified Cloud Practitioner badge" />
+        </div>
+        <div class="card">
           <h3>TCS NQT - Cognitive</h3>
           <p>Issued: June 2025</p>
           <p>Score: 69.94%</p>
-        </article>
+          <p>Assessment Area: Quantitative, Verbal, and Reasoning aptitude</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Education</h2>
+      <div class="edu-list">
+        <div class="card">
+          <h3>B.E. - Computer Science and Engineering</h3>
+          <p>Varuvan Vadivelan Institute of Technology, Dharmapuri</p>
+          <p>Graduated: June 2024</p>
+          <p>Score: 80%</p>
+          <p>Focus Areas: Operating Systems, Networking, Cloud Fundamentals, Automation</p>
+        </div>
+        <div class="card">
+          <h3>Higher Secondary Course (HSC)</h3>
+          <p>Jaisakthi Matric Hr Sec School, Palacode, Dharmapuri</p>
+          <p>Completed: March 2020</p>
+          <p>Score: 71%</p>
+        </div>
+        <div class="card">
+          <h3>Secondary School Leaving Certificate (SSLC)</h3>
+          <p>Jaisakthi Matric Hr Sec School, Palacode, Dharmapuri</p>
+          <p>Completed: March 2018</p>
+          <p>Score: 92%</p>
+        </div>
       </div>
     </section>
 
     <footer>
-      &copy; 2026 Sivakumar Chinnasamy | Professional Portfolio
+      &copy; 2026 Sivakumar Chinnasamy | thesivakumar.tech | All rights reserved.
     </footer>
   </main>
 </body>
