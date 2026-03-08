@@ -1,328 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <link rel="icon" href="img/S.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Sivakumar ~ Portfolio</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sivakumar Chinnasamy | Associate DevOps Engineer</title>
+  <meta name="description" content="Professional portfolio of Sivakumar Chinnasamy, Associate DevOps Engineer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #d9e2ec;
+      --primary: #0b3a67;
+      --primary-soft: #e8f0f8;
+    }
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
+    * { box-sizing: border-box; }
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    .wrap {
+      width: min(1080px, 92%);
+      margin: 2rem auto;
+    }
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+    }
+
+    .role {
+      margin-top: 0.35rem;
+      display: inline-block;
+      background: var(--primary-soft);
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    .meta {
+      margin: 0.55rem 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .contact {
+      margin-top: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .contact a {
+      text-decoration: none;
+      color: var(--primary);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.4rem 0.65rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      background: #fff;
+    }
+
+    h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+
+    p { margin: 0; }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem;
+    }
+
+    .skill {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.65rem;
+      background: #f9fbfd;
+      font-size: 0.9rem;
+    }
+
+    .skill strong {
+      display: block;
+      margin-bottom: 0.1rem;
+      color: var(--text);
+    }
+
+    .item {
+      border-left: 3px solid var(--primary);
+      padding-left: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .item:last-child { margin-bottom: 0; }
+
+    .item h3 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .date {
+      margin: 0.2rem 0 0.4rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1rem;
+      font-size: 0.92rem;
+      color: #1f2d3d;
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .grid-2 { grid-template-columns: 1fr 1fr; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .sub {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.75rem;
+      background: #fff;
+    }
+
+    .sub h3 {
+      margin: 0;
+      font-size: 0.97rem;
+    }
+
+    .sub p {
+      margin-top: 0.2rem;
+      font-size: 0.89rem;
+      color: #334155;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.84rem;
+      padding: 0.5rem 0 1rem;
+    }
+
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: 1fr; }
+      .photo { width: 150px; height: 150px; }
+      .skills,
+      .grid-2,
+      .grid-3 { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <!-- Navbar Start -->
-    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
-        <a href="index.html" class="navbar-brand ml-lg-3">
-            <h1 class="m-0 display-5"><span class="text-primary"></span></h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
-            <div class="navbar-nav m-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#qualification" class="nav-item nav-link">Quality</a>
-                <a href="#skill" class="nav-item nav-link">Skill</a>
-                <a href="#contact" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vvitsivakumar@gmail.com&su=Hiring%20Inquiry&body=Hello%20Sivakumar,%0D%0A%0D%0AI%20am%20interested%20in%20discussing%20the%20hiring%20opportunity.%0D%0A%0D%0AKnow%20a%20good%20time%20to%20connect.%0D%0A%0D%0AThank%20you!" target="_blank" class="btn btn-outline-primary mr-4"><i class="fas fa-envelope"></i> Reach out by E-Mail</a>
-            <a href="https://wa.me/917604861942?text=Hello,%20I%20am%20interested%20in%20discussing%20the%20hiring%20opportunity.%20Please%20let%20me%20know%20a%20good%20time%20to%20connect." target="_blank" class="btn btn-outline-primary mr-4"> <i class="fab fa-whatsapp mr-2"></i>Consider me via WhatsApp</a>
+<body>
+  <main class="wrap">
+    <section class="card hero">
+      <img class="photo" src="./cva_phpot.png" alt="Sivakumar Chinnasamy" />
+      <div>
+        <h1>Sivakumar Chinnasamy</h1>
+        <span class="role">Associate DevOps Engineer</span>
+        <p class="meta">Dharmapuri, Tamil Nadu, India - 636808</p>
+        <div class="contact">
+          <a href="tel:+917604861942">+91 7604861942</a>
+          <a href="mailto:vvitsivakumar@gmail.com">vvitsivakumar@gmail.com</a>
+          <a href="https://www.linkedin.com/in/sivakumarbecse" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
-    </nav>
-    <!-- Navbar End -->
+      </div>
+    </section>
 
+    <section class="card">
+      <h2>Professional Summary</h2>
+      <p>DevOps Engineer with hands-on experience in Linux server administration, Docker containerization, Kubernetes orchestration, and SaaS infrastructure management. Experienced in production workloads on DigitalOcean Kubernetes and Proxmox virtualization environments. Skilled in Jenkins CI/CD, Ansible automation for server patching, and Zabbix monitoring for proactive alerting. AWS Certified Cloud Practitioner focused on reliability, scalability, and deployment efficiency.</p>
+    </section>
 
-    <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>        
-                    <!-- 16:9 aspect ratio -->
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Video Modal End -->
+    <section class="card">
+      <h2>Technical Skills</h2>
+      <div class="skills">
+        <div class="skill"><strong>Cloud Platforms</strong>DigitalOcean (Kubernetes - SaaS Hosting)</div>
+        <div class="skill"><strong>Cloud Fundamentals</strong>AWS Certified Cloud Practitioner</div>
+        <div class="skill"><strong>Programming & Scripting</strong>Shell Scripting, Core Python</div>
+        <div class="skill"><strong>Operating Systems</strong>Linux (Debian, RHEL), Windows</div>
+        <div class="skill"><strong>Virtualization & Infrastructure</strong>Proxmox VE (Server & VM Management)</div>
+        <div class="skill"><strong>CI/CD</strong>Jenkins (Basic Pipeline Setup)</div>
+        <div class="skill"><strong>Configuration Management</strong>Ansible</div>
+        <div class="skill"><strong>Monitoring & Observability</strong>Zabbix</div>
+        <div class="skill"><strong>Version Control</strong>Git, GitHub</div>
+        <div class="skill"><strong>Web Servers</strong>Apache, Nginx</div>
+        <div class="skill"><strong>Databases</strong>MySQL, MariaDB</div>
+        <div class="skill"><strong>Containerization & Orchestration</strong>Docker, Kubernetes</div>
+      </div>
+    </section>
 
+    <section class="card">
+      <h2>Professional Experience</h2>
+      <article class="item">
+        <h3>Associate DevOps Engineer - FaveoCloud, Faveo (formerly Ladybird Web Solution Pvt Ltd)</h3>
+        <p class="date">Dec 2025 - Present | Dharmapuri, Tamil Nadu, India</p>
+        <ul>
+          <li>Manage and support SaaS applications hosted on DigitalOcean Kubernetes with Linux-based infrastructure.</li>
+          <li>Assist Jenkins CI/CD pipeline setup and build automation for application delivery.</li>
+          <li>Develop and execute Ansible playbooks for automated patching and server housekeeping.</li>
+          <li>Implement Zabbix monitoring with triggers, alert policies, and dashboards for proactive issue detection.</li>
+          <li>Deploy applications using Docker and support Kubernetes orchestration tasks.</li>
+          <li>Manage Proxmox VE servers and provision virtual machines for application and internal environments.</li>
+        </ul>
+      </article>
+      <article class="item">
+        <h3>Trainee DevOps Engineer - FaveoCloud, Faveo (formerly Ladybird Web Solution Pvt Ltd)</h3>
+        <p class="date">Dec 2024 - Nov 2025 | Dharmapuri, Tamil Nadu, India</p>
+        <ul>
+          <li>Supported Linux-based infrastructure and routine operations for hosted applications.</li>
+          <li>Assisted Faveo Helpdesk installation, configuration, and deployment support.</li>
+          <li>Worked on Docker container creation and management.</li>
+          <li>Configured Apache/Nginx web servers and managed SSL certificates.</li>
+          <li>Performed monitoring, troubleshooting, and log analysis for uptime support.</li>
+        </ul>
+      </article>
+      <article class="item">
+        <h3>DevOps Engineer (Internship) - Faveo (formerly Ladybird Web Solution Pvt Ltd)</h3>
+        <p class="date">Aug 2024 - Nov 2024 | Dharmapuri, Tamil Nadu, India</p>
+        <ul>
+          <li>Gained hands-on Linux systems and server administration experience.</li>
+          <li>Assisted Faveo Helpdesk setup and Apache/Nginx configuration.</li>
+          <li>Supported Docker containerization, basic Kubernetes usage, and SSL setup.</li>
+          <li>Performed basic automation tasks using shell scripting.</li>
+        </ul>
+      </article>
+    </section>
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/profile.jpg" alt="">
-                </div>
-                <div class="col-lg-7 text-center text-lg-left">
-                    <h3 class="text-white font-weight-normal mb-3">I'm</h3>
-                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">Sivakumar Chinnasamy</h1>
-                    <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-                    <div class="typed-text d-none">DevOps Engineer</div>
-                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="https://docs.google.com/document/d/1SAzc6wvG6qZSLANfDEcjeBtdULraYrKq/edit?usp=sharing&ouid=113355369904556221140&rtpof=true&sd=true" class="btn btn-outline-light mr-5" target="_blank" >Download CV</a>  
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
+    <section class="card">
+      <h2>Education</h2>
+      <div class="grid-3">
+        <article class="sub">
+          <h3>Bachelor of Engineering - Computer Science and Engineering</h3>
+          <p>Varuvan Vadivelan Institute of Technology</p>
+          <p>Graduated: June 2024 | Percentage: 80%</p>
+        </article>
+        <article class="sub">
+          <h3>Higher Secondary Course (HSC)</h3>
+          <p>Jaisakthi Matric Hr Sec School</p>
+          <p>Completed: March 2020 | Percentage: 71%</p>
+        </article>
+        <article class="sub">
+          <h3>Secondary School Leaving Certificate (SSLC)</h3>
+          <p>Jaisakthi Matric Hr Sec School</p>
+          <p>Completed: March 2018 | Percentage: 92%</p>
+        </article>
+      </div>
+    </section>
 
+    <section class="card">
+      <h2>Certifications</h2>
+      <div class="grid-2">
+        <article class="sub">
+          <h3>AWS Certified Cloud Practitioner</h3>
+          <p>Issued: January 24, 2026</p>
+          <p>Valid until: January 24, 2029</p>
+          <p>Validation ID: 2e844775cb114020b4bbc0e37c2e4200</p>
+        </article>
+        <article class="sub">
+          <h3>TCS NQT - Cognitive</h3>
+          <p>Issued: June 2025</p>
+          <p>Score: 69.94%</p>
+        </article>
+      </div>
+    </section>
 
-    <!-- About Start -->
-    <div class="container-fluid py-5" id="about">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>
-                <h1 class="position-absolute text-uppercase text-primary">About Me</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid rounded w-100" src="img/about.jpg" alt="">
-                </div>
-                <div class="col-lg-7">
-                    <h3 class="mb-4">DevOps Engineer</h3>
-                    <p>DevOps engineer with expertise in automation, system monitoring, web hosting, and infrastructure management. Dedicated to enhancing operational efficiency and implementing scalable solutions. Committed to continuous learning and contributing to collaborative teams</p>
-                    <div class="row mb-3">
-                        <div class="col-sm-6 py-2"><h6>Name: <span class="text-secondary">Sivakumar Chinnasamy</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Birthday: <span class="text-secondary">08 July 2003</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Degree: <span class="text-secondary">Bachelor of Engineering in CSE</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Experience: <span class="text-secondary">3 Month</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Phone: <span class="text-secondary">+91 760 486 1942</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">vvitsivakumar@gmail.com</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Address: <span class="text-secondary">Karimangalam, Dharmapuri, Tamil Nadu - 636 808</span></h6></div>
-                    </div>
-                
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vvitsivakumar@gmail.com&su=Hiring%20Inquiry&body=Hello%20Sivakumar,%0D%0A%0D%0AI%20am%20interested%20in%20discussing%20the%20hiring%20opportunity.%0D%0A%0D%0AKnow%20a%20good%20time%20to%20connect.%0D%0A%0D%0AThank%20you!" target="_blank" class="btn btn-outline-primary mr-4"><i class="fas fa-envelope"></i> Reach out by E-Mail</a>
-                <a href="https://wa.me/917604861942?text=Hello,%20I%20am%20interested%20in%20discussing%20the%20hiring%20opportunity.%20Please%20let%20me%20know%20a%20good%20time%20to%20connect." target="_blank" class="btn btn-outline-primary mr-4"> <i class="fab fa-whatsapp mr-2"></i>Consider me via WhatsApp</a>
-           
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-
-
-    <!-- Qualification Start -->
-    <div class="container-fluid py-5" id="qualification">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Quality</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Education & Expericence</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Education</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Varuvan Vadivelan Institute of Technology</h5>
-                            <p class="mb-2"><strong>Bachelor of Engineering In CSE</strong> | <small>2020 - 2024</small></p>
-                            <p>Percentage: 80%</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Jaisakthi Matric Higher Secondary School</h5>
-                            <p class="mb-2"><strong>HSC</strong> | <small>2019 - 2020</small></p>
-                            <p>Percentage: 71%</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Jaisakthi Matric Higher Secondary School</h5>
-                            <p class="mb-2"><strong>SSLC</strong> | <small>2017 - 2018 </small></p>
-                            <p>Percentage: 92%</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Expericence</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">DevOps Engineer (Internship)</h5>
-                            <p class="mb-2"><strong>Ladybird Web Solution Pvt Ltd</strong> | <small>08/2024 - 11/2024</small></p>
-                            <p></p>
-                        </div>
-                            <div class="position-relative mb-4">
-                                <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                                <h5 class="font-weight-bold mb-1">Trainee DevOps Engineer</h5>
-                                <p class="mb-2"><strong>Ladybird Web Solution Pvt Ltd</strong> | <small>12/2024 - Current</small></p>
-                                <p></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Qualification End -->
-
-
-    <!-- Skill Start -->
-    <div class="container-fluid py-5" id="skill">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Skills</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Cloud Services: AWS & Digital Ocean</h6>
-                            <h6 class="font-weight-bold">80%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Programming : Shell Scripting, Core Python, Core Java</h6>
-                            <h6 class="font-weight-bold">70%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">OS Platforms: Windows & Linux (Debian & RHEL)</h6>
-                            <h6 class="font-weight-bold">85%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Containerization: Docker</h6>
-                            <h6 class="font-weight-bold">80%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Source Code Management tools: Github</h6>
-                            <h6 class="font-weight-bold">85%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Web Server Tools: Apache, Nginx</h6>
-                            <h6 class="font-weight-bold">75%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Skill End -->
-
-    <!-- Contact Start -->
-    <div class="container-fluid py-5" id="contact">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
-            </div>
-            <div class="row justify-content-center">
-                            <div>
-                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vvitsivakumar@gmail.com&su=Hiring%20Inquiry&body=Hello%20Sivakumar,%0D%0A%0D%0AI%20am%20interested%20in%20discussing%20the%20hiring%20opportunity.%0D%0A%0D%0AKnow%20a%20good%20time%20to%20connect.%0D%0A%0D%0AThank%20you!" target="_blank" class="btn btn-outline-primary mr-4"><i class="fas fa-envelope"></i>  Quick Contact by E-Mail</a>
-
-                                                    <a href="https://wa.me/917604861942?text=Hello,%20I%20am%20interested%20in%20discussing%20the%20hiring%20opportunity.%20Please%20let%20me%20know%20a%20good%20time%20to%20connect." target="_blank" class="btn btn-outline-primary mr-4"> <i class="fab fa-whatsapp mr-2"></i> Quick Contact by WhatsApp</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
-        <div class="container text-center py-5">
-            <div class="d-flex justify-content-center mb-4">
-                
-                <a class="btn btn-light btn-social mr-2" href="https://www.linkedin.com/in/sivakumarbecse"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-github"></i></a>
-                <a class="btn btn-light btn-social mr-2" href="#"><i class="fas fa-envelope"></i></a>
-            </div>
-            <div class="d-flex justify-content-center mb-3">
-                <a class="text-white" href="#">Privacy</a>
-                <span class="px-3">|</span>
-                <a class="text-white" href="#">Terms</a>
-                <span class="px-3">|</span>
-                <a class="text-white" href="#">FAQs</a>
-                <span class="px-3">|</span>
-                <a class="text-white" href="#">Help</a>
-            </div>
-            <p class="m-0">&copy; <a class="text-white font-weight-bold" href="https://mail.google.com/mail/?view=cm&fs=1&to=vvitsivakumar@gmail.com&su=Request%20for%20Content%20Usage%20Permission&body=Hello%20Sivakumar,%0D%0A%0D%0AI%20hope%20this%20email%20finds%20you%20well.%0D%0A%0D%0AI%20am%20writing%20to%20request%20your%20permission%20to%20use%20[describe%20the%20content]%20from%20your%20website%2C%20[thesivakumar.tech]%2C%20for%20[describe%20how%20you%20intend%20to%20use%20the%20content%2C%20e.g.%20in%20an%20article%2C%20presentation%2C%20project%2C%20etc.].%0D%0A%0D%0AIf%20you%20are%20open%20to%20granting%20permission%2C%20could%20you%20please%20let%20me%20know%20any%20specific%20terms%20or%20conditions%20I%20should%20follow%20when%20using%20the%20content%3F%0D%0A%0D%0AI%20greatly%20appreciate%20your%20consideration%20of%20this%20request.%20Please%20let%20me%20know%20if%20you%20require%20any%20further%20details%20or%20clarifications.%0D%0A%0D%0AThank%20you%20in%20advance%20for%20your%20time%20and%20consideration.%0D%0A%0D%0ABest%20regards%2C%0D%0A%0D%0A[Your%20Name]">thesivakumar.tech</a>. All Rights Reserved. Designed by <a class="text-white font-weight-bold" href="#">Sivakumar</a>
-            </p>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-    <!-- Scroll to Bottom -->
-    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
-
-    <!-- Back to Top -->
-    <a href="" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/typed/typed.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-
-
-    
+    <footer>
+      &copy; 2026 Sivakumar Chinnasamy | Professional Portfolio
+    </footer>
+  </main>
 </body>
-
 </html>
